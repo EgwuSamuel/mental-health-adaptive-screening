@@ -268,22 +268,24 @@ def fig_flow(path):
 
 
 def fig_pareto(curves, path):
-    fig, axes = plt.subplots(1, 2, figsize=(7.2, 3.2), sharey=True)
+    fig, axes = plt.subplots(1, 2, figsize=(7.2, 3.6), sharey=True)
     for ax, (title, cdict, J) in zip(axes, curves):
         for i, (name, pts) in enumerate(cdict.items()):
             pts = sorted(pts)
             xs, ys = zip(*pts)
             ax.plot(xs, ys, marker="o", ms=4, color=C[i], label=name)
+        xs_all = [x for pts in cdict.values() for x, _ in pts]
+        lo, hi = max(0, min(xs_all) - 0.3), max(xs_all) + 0.3
+        ax.set_xlim(lo, hi)
         ax.axhline(1 - ALPHA, color=INK2, lw=1, ls="--")
-        ax.text(J - 0.1, 1 - ALPHA + 0.006, "95% target", ha="right", fontsize=7, color=INK2)
+        ax.text(hi - 0.05, 1 - ALPHA - 0.012, "95% target", ha="right", va="top", fontsize=7, color=INK2)
         ax.set_title(title, fontsize=9, color=INK, loc="left")
         ax.set_xlabel("Mean questions asked per person")
-        xs_all = [x for pts in cdict.values() for x, _ in pts]
-        ax.set_xlim(max(0, min(xs_all) - 0.3), max(xs_all) + 0.3)
     axes[0].set_ylabel("Sensitivity vs full questionnaire")
     axes[0].set_ylim(0.6, 1.01)
     handles, labels = axes[0].get_legend_handles_labels()
-    fig.legend(handles, labels, loc="lower center", ncol=3, fontsize=7.5, bbox_to_anchor=(0.5, -0.12))
+    fig.tight_layout(rect=(0, 0.14, 1, 1))
+    fig.legend(handles, labels, loc="lower center", ncol=3, fontsize=7.5, bbox_to_anchor=(0.5, 0.0))
     fig.savefig(path)
     plt.close(fig)
 
