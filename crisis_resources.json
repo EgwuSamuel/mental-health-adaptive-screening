@@ -1,0 +1,18 @@
+{
+  "checked_on": "2026-11-05",
+  "warning": "Numbers were cross-checked against several public web sources on the date above but no official national directory was found. Re-confirm every number by calling it before any public deployment.",
+  "resources": [
+    {"name": "National emergency number (Nigeria)", "contact": "112", "notes": "Toll-free, 24/7"},
+    {"name": "Lagos State emergency line", "contact": "767", "notes": "Lagos State"},
+    {"name": "Lagos MIND / Lagos Lifeline (Lagos State mental health helpline)", "contact": "0909 000 6463", "notes": "Also on WhatsApp"},
+    {"name": "Mentally Aware Nigeria Initiative (MANI)", "contact": "0809 111 6264", "notes": "Peer-support crisis line"},
+    {"name": "Federal Neuropsychiatric Hospital, Yaba, Lagos", "contact": "Walk-in emergency", "notes": "Specialist psychiatric hospital"},
+    {"name": "Lagos University Teaching Hospital (LUTH), Idi-Araba", "contact": "Walk-in emergency", "notes": "Psychiatry department"}
+  ],
+  "sources": [
+    "https://von.gov.ng/lagos-launches-help-line-for-mental-health-care-support/",
+    "https://lagosmind.org/lagos-lifeline",
+    "https://www.therapyroute.com/article/suicide-hotlines-and-crisis-lines-in-nigeria",
+    "https://mytherapist.ng/helplines"
+  ]
+}

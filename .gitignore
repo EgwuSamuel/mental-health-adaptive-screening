@@ -1,0 +1,11 @@
+# raw and processed data are downloaded by study/download_data.py (never committed;
+# one source file contains respondent e-mail/IP addresses)
+study/data/
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+study/run_stdout.txt
+*.docx
+.claude/

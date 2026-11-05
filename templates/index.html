@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mental Health Early Detection</title>
+<style>
+  :root {
+    --bg:        #F8F7F4;
+    --surface:   #FFFFFF;
+    --border:    #E4E2DA;
+    --text:      #1A1A18;
+    --muted:     #6B6960;
+    --hint:      #8A8880;
+    --accent:    #534AB7;
+    --accent-bg: #EEEDFE;
+    --green:     #3B6D11;
+    --green-bg:  #EAF3DE;
+    --amber:     #854F0B;
+    --amber-bg:  #FAEEDA;
+    --red:       #A32D2D;
+    --red-bg:    #FCEBEB;
+    --radius:    10px;
+    --radius-sm: 6px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: var(--bg); color: var(--text); min-height: 100vh; padding: 2rem 1rem;
+  }
+  .container { max-width: 600px; margin: 0 auto; }
+
+  .site-header { margin-bottom: 2rem; }
+  .site-header .eyebrow { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); font-weight: 500; margin-bottom: 8px; }
+  .site-header h1 { font-size: 22px; font-weight: 500; line-height: 1.3; }
+  .site-header p  { font-size: 14px; color: var(--muted); margin-top: 6px; line-height: 1.6; }
+  .model-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--surface); border: 0.5px solid var(--border); border-radius: 20px; padding: 4px 12px; font-size: 12px; color: var(--muted); margin-top: 10px; }
+  .model-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: #3B6D11; }
+
+  .card { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 1rem; }
+
+  .progress-wrap { margin-bottom: 1.5rem; }
+  .progress-meta { display: flex; justify-content: space-between; font-size: 12px; color: var(--hint); margin-bottom: 6px; }
+  .progress-track { height: 3px; background: var(--border); border-radius: 2px; overflow: hidden; }
+  .progress-fill  { height: 100%; background: var(--accent); border-radius: 2px; transition: width 0.3s ease; }
+
+  .q-domain { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); margin-bottom: 8px; font-weight: 500; }
+  .q-text   { font-size: 16px; font-weight: 500; line-height: 1.5; margin-bottom: 1.25rem; }
+
+  .options { display: flex; flex-direction: column; gap: 8px; }
+  .opt { display: flex; align-items: center; gap: 12px; padding: 11px 14px; border-radius: var(--radius-sm); border: 0.5px solid var(--border); background: var(--surface); cursor: pointer; font-size: 14px; color: var(--text); transition: border-color 0.12s, background 0.12s; text-align: left; width: 100%; }
+  .opt:hover { border-color: var(--accent); background: var(--accent-bg); }
+  .opt.selected { border-color: var(--accent); background: var(--accent-bg); color: #3C3489; }
+  .opt .radio { width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid var(--border); flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+  .opt.selected .radio { border-color: var(--accent); background: var(--accent); }
+  .opt.selected .radio::after { content: ""; width: 6px; height: 6px; border-radius: 50%; background: white; }
+  .opt .score-hint { margin-left: auto; font-size: 11px; color: var(--hint); }
+  .opt-row { display: flex; flex-wrap: wrap; gap: 8px; }
+  .opt-row .opt { width: auto; flex: 1 1 120px; }
+  .field-label { font-size: 13px; color: var(--muted); margin: 14px 0 8px; }
+
+  .nav { display: flex; gap: 10px; margin-top: 1.5rem; }
+  .btn { flex: 1; padding: 10px 18px; border-radius: var(--radius-sm); font-size: 14px; font-weight: 500; cursor: pointer; border: 0.5px solid var(--border); transition: all 0.12s; }
+  .btn-ghost  { background: var(--bg); color: var(--muted); }
+  .btn-ghost:hover { background: var(--border); }
+  .btn-primary { background: var(--accent); color: white; border-color: var(--accent); }
+  .btn-primary:hover  { background: #3C3489; }
+  .btn-primary:disabled { opacity: 0.35; cursor: default; }
+
+  .analyzing { text-align: center; padding: 3rem 0; }
+  .spinner-wrap { width: 48px; height: 48px; margin: 0 auto 1.25rem; }
+  .spinner { width: 48px; height: 48px; border: 2.5px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.85s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .analyzing p { font-size: 14px; color: var(--muted); }
+
+  .result-hero { text-align: center; padding: 1rem 0 1.5rem; }
+  .risk-pill { display: inline-block; padding: 6px 18px; border-radius: 20px; font-size: 13px; font-weight: 500; margin-bottom: 12px; }
+  .risk-pill.green { background: var(--green-bg); color: var(--green); }
+  .risk-pill.amber { background: var(--amber-bg); color: var(--amber); }
+  .risk-pill.red   { background: var(--red-bg);   color: var(--red); }
+  .result-title { font-size: 20px; font-weight: 500; margin-bottom: 8px; }
+  .result-desc  { font-size: 14px; color: var(--muted); line-height: 1.6; max-width: 460px; margin: 0 auto; padding: 0 1rem; }
+
+  .score-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 1.5rem 1rem 0; text-align: left; }
+  .score-cell { background: var(--bg); border-radius: var(--radius-sm); padding: 14px; }
+  .score-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--hint); margin-bottom: 6px; }
+  .score-value { font-size: 16px; font-weight: 500; }
+
+  .section-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--hint); font-weight: 500; margin-bottom: 12px; }
+  .rec-item { display: flex; gap: 10px; padding: 10px 0; border-top: 0.5px solid var(--border); font-size: 14px; line-height: 1.5; color: var(--muted); }
+  .rec-item:first-child { border-top: none; }
+  .rec-num { font-size: 11px; font-weight: 500; color: var(--accent); flex-shrink: 0; padding-top: 1px; }
+
+  .disclaimer { font-size: 12px; color: var(--muted); line-height: 1.6; padding: 12px; background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius-sm); margin-top: 1rem; }
+  .feature-list { list-style: none; margin: 1rem 0; }
+  .feature-list li { display: flex; gap: 10px; padding: 6px 0; font-size: 14px; color: var(--muted); }
+  .feature-list li::before { content: "·"; color: var(--accent); font-weight: 700; }
+
+  .error-banner, .alert { background: var(--red-bg); color: var(--red); border: 0.5px solid #F7C1C1; border-radius: var(--radius-sm); padding: 12px 14px; font-size: 13px; line-height: 1.55; margin-bottom: 1rem; }
+  .error-banner { display: none; }
+  .alert strong { display: block; margin-bottom: 4px; }
+  .note { font-size: 12px; color: var(--muted); line-height: 1.55; margin-top: 10px; }
+  .crisis-list { list-style: none; margin-top: 6px; }
+  .crisis-list li { padding: 8px 0; border-top: 0.5px solid var(--border); font-size: 13px; display: flex; justify-content: space-between; gap: 12px; }
+  .crisis-list li:first-child { border-top: none; }
+  .crisis-list .num { font-weight: 600; white-space: nowrap; }
+  .saved { display: inline-block; margin-top: 14px; font-size: 12px; color: #3C3489; background: var(--accent-bg); border-radius: 20px; padding: 4px 12px; }
+
+  @media (max-width: 480px) { .score-grid { grid-template-columns: 1fr; margin: 1.5rem 0 0; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="site-header">
+    <div class="eyebrow">FUNAAB · Dept. of Computer Science</div>
+    <h1>Mental Health Early Detection</h1>
+    <p>Short, adaptive screening for depression (PHQ-9) and anxiety (GAD-7). Questions are chosen one at a time, and screening stops early only when a calibrated safety rule allows it.</p>
+    <div class="model-badge"><span class="dot"></span><span id="model-badge-text">Loading screener…</span></div>
+  </header>
+
+  <div id="error-banner" class="error-banner"></div>
+  <div id="app"></div>
+
+</div>
+
+<script>
+const OPTS = [
+  {label:"Not at all", value:0}, {label:"Several days", value:1},
+  {label:"More than half the days", value:2}, {label:"Nearly every day", value:3},
+];
+const MODULES = ["phq9", "gad7"];
+const MODULE_NAME = {phq9:"Depression (PHQ-9)", gad7:"Anxiety (GAD-7)"};
+const FULL = {phq9:9, gad7:7};
+
+function fresh() {
+  return {screen:"intro", sex:null, age_band:null, mi:0, answers:{phq9:{}, gad7:{}},
+          history:[], current:null, selected:null, result:null, busy:false};
+}
+let state = fresh();
+
+fetch("/api/model-info").then(r => r.json()).then(d => {
+  document.getElementById("model-badge-text").textContent = d.error
+    ? "Screener not loaded"
+    : `Certified adaptive screening · miss-rate target ≤ ${Math.round(d.alpha * 100)}%`;
+}).catch(() => { document.getElementById("model-badge-text").textContent = "Screener ready"; });
+
+function esc(t) { const d = document.createElement("div"); d.textContent = t ?? ""; return d.innerHTML; }
+
+function render() {
+  const views = {intro:renderIntro, about:renderAbout, quiz:renderQuiz, analyzing:renderAnalyzing, result:renderResult};
+  document.getElementById("app").innerHTML = views[state.screen]();
+}
+
+function renderIntro() {
+  return `
+<div class="card">
+  <p style="font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:.75rem;">
+    You will be asked how often, over the <strong>last 2 weeks</strong>, you have been bothered by
+    certain problems. Answer as honestly as you can. Your answers are not stored.
+  </p>
+  <ul class="feature-list">
+    <li>Up to 9 depression questions (PHQ-9) and up to 7 anxiety questions (GAD-7)</li>
+    <li>Most people need far fewer: each next question is chosen from your earlier answers</li>
+    <li>A question about thoughts of self-harm is always included, for your safety</li>
+  </ul>
+  <p style="font-size:13px;color:var(--muted);line-height:1.5;border-top:.5px solid var(--border);padding-top:12px;margin-top:4px;">
+    Takes 1–3 minutes · A screening aid, not a diagnosis
+  </p>
+</div>
+<button class="btn btn-primary" style="width:100%" onclick="go('about')">Begin screening</button>`;
+}
+
+function choice(field, value, label) {
+  const sel = state[field] === value;
+  return `<button class="opt ${sel ? 'selected' : ''}" onclick="setField('${field}','${value}')"><span class="radio"></span><span>${label}</span></button>`;
+}
+
+function renderAbout() {
+  const ready = state.sex && state.age_band;
+  return `
+<div class="card">
+  <div class="q-domain">About you</div>
+  <p class="note" style="margin:0 0 6px">Used only to apply the safety rule calibrated for your group. You can choose “Prefer not to say”.</p>
+  <div class="field-label">Sex</div>
+  <div class="opt-row">${choice("sex","female","Female")}${choice("sex","male","Male")}${choice("sex","prefer_not","Prefer not to say")}</div>
+  <div class="field-label">Age</div>
+  <div class="opt-row">${choice("age_band","18-39","18–39")}${choice("age_band","40-59","40–59")}${choice("age_band","60+","60+")}${choice("age_band","prefer_not","Prefer not to say")}</div>
+  <div class="nav">
+    <button class="btn btn-ghost" onclick="go('intro')">Back</button>
+    <button class="btn btn-primary" onclick="startQuiz()" ${ready ? '' : 'disabled'}>Continue</button>
+  </div>
+</div>`;
+}
+
+function renderQuiz() {
+  const q = state.current;
+  if (!q) return `<div class="card analyzing"><div class="spinner-wrap"><div class="spinner"></div></div><p>Loading the first question…</p></div>`;
+  const m = MODULES[state.mi];
+  const n = Object.keys(state.answers[m]).length;
+  const pct = Math.round(n / FULL[m] * 100);
+  const sel = state.selected;
+  const safetyAlert = state.answers.phq9.phq9 > 0;
+  return `
+${safetyAlert ? `<div class="alert"><strong>You mentioned thoughts of self-harm.</strong>
+If you might act on these thoughts or are in danger now, call <b>112</b> (or <b>767</b> in Lagos) or go to the nearest hospital emergency department. Support numbers are listed at the end.</div>` : ""}
+<div class="card">
+  <div class="progress-wrap">
+    <div class="progress-meta"><span>${MODULE_NAME[m]} · question ${n + 1}</span><span>at most ${FULL[m]}</span></div>
+    <div class="progress-track"><div class="progress-fill" style="width:${pct}%"></div></div>
+  </div>
+  <div class="q-domain">${esc(q.domain)}</div>
+  <div class="q-text">Over the last 2 weeks, how often have you been bothered by: ${esc(q.text.charAt(0).toLowerCase() + q.text.slice(1))}?</div>
+  <div class="options">
+    ${OPTS.map(o => `
+    <button class="opt ${sel === o.value ? 'selected' : ''}" onclick="pick(${o.value})">
+      <span class="radio"></span><span>${o.label}</span><span class="score-hint">${o.value}</span>
+    </button>`).join("")}
+  </div>
+  <div class="nav">
+    ${state.history.length ? `<button class="btn btn-ghost" onclick="back()">Back</button>` : ""}
+    <button class="btn btn-primary" onclick="next()" ${sel === null || state.busy ? 'disabled' : ''}>Next</button>
+  </div>
+</div>`;
+}
+
+function renderAnalyzing() {
+  return `<div class="card analyzing"><div class="spinner-wrap"><div class="spinner"></div></div><p>Working out your result…</p></div>`;
+}
+
+function moduleCell(r, label) {
+  const color = r.decision === "positive" ? "var(--red)" : "var(--green)";
+  const detail = r.complete ? `Score ${r.partial_score} of ${r.items_total * 3} · ${r.severity}`
+    : (r.decision === "positive" ? "Score of 10 or more reached"
+       : (r.basis === "certified" ? "Below threshold (certified early stop)" : "Below threshold (certain)"));
+  return `<div class="score-cell">
+    <div class="score-label">${label}</div>
+    <div class="score-value" style="color:${color}">${r.decision === "positive" ? "Screen positive" : "Screen negative"}</div>
+    <div class="note" style="margin-top:6px">${esc(detail)}<br>${r.items_asked} of ${r.items_total} questions asked</div>
+  </div>`;
+}
+
+function renderResult() {
+  const r = state.result;
+  const saved = r.questions_full - r.questions_asked;
+  return `
+${r.safety_alert ? `<div class="alert"><strong>Please reach out for support now.</strong>
+You said you have had thoughts of being better off dead or of hurting yourself. You do not have to face this alone. If you are in immediate danger, call 112 (or 767 in Lagos).</div>` : ""}
+<div class="card result-hero">
+  <div class="risk-pill ${r.risk_color}">${esc(r.risk_title)}</div>
+  <div class="result-title">${r.risk_color === "green" ? "Your results look reassuring" : r.risk_color === "amber" ? "Some symptoms detected" : "Professional evaluation advised"}</div>
+  <div class="result-desc">${esc(r.description)}</div>
+  <div class="score-grid">
+    ${moduleCell(r.depression, "Depression (PHQ-9)")}
+    ${moduleCell(r.anxiety, "Anxiety (GAD-7)")}
+  </div>
+  <span class="saved">${r.questions_asked} of ${r.questions_full} questions asked${saved > 0 ? ` · ${saved} skipped safely` : ""}</span>
+</div>
+${r.crisis_resources.length ? `
+<div class="card">
+  <div class="section-label">Where to get help</div>
+  <ul class="crisis-list">${r.crisis_resources.map(c => `<li><span>${esc(c.name)}</span><span class="num">${esc(c.contact)}</span></li>`).join("")}</ul>
+  <p class="note">${esc(r.crisis_note)}</p>
+</div>` : ""}
+<div class="card">
+  <div class="section-label">Recommendations</div>
+  <div>${r.recommendations.map((rec, i) => `
+    <div class="rec-item"><span class="rec-num">${String(i + 1).padStart(2, "0")}</span><span>${esc(rec)}</span></div>`).join("")}</div>
+</div>
+<div class="disclaimer">
+  <strong>Important:</strong> This is a screening aid, not a diagnosis. Early stopping is calibrated so that at most 5% of
+  people who would screen positive on the full questionnaire are missed, in the populations used for calibration (US adults
+  for depression, Chinese university students for anxiety). It has not yet been calibrated on Nigerian data.
+  Please see a qualified health professional for an assessment.
+</div>
+<button class="btn btn-ghost" style="width:100%;margin-top:1rem" onclick="reset()">Retake screening</button>`;
+}
+
+// ── Actions ───────────────────────────────────────────────────────────────────
+function go(s) { state.screen = s; render(); }
+function setField(f, v) { state[f] = v; render(); }
+function pick(v) { state.selected = v; render(); }
+function reset() { state = fresh(); showError(""); render(); }
+function showError(msg) { const e = document.getElementById("error-banner"); e.textContent = msg; e.style.display = msg ? "block" : "none"; }
+
+async function api(path, body) {
+  const res = await fetch(path, {method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(body)});
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.error || "Request failed");
+  return data;
+}
+
+async function startQuiz() { state.screen = "quiz"; state.mi = 0; state.current = null; render(); await advance(); }
+
+async function advance() {
+  state.busy = true; showError("");
+  try {
+    const m = MODULES[state.mi];
+    const d = await api("/api/next", {module:m, answers:state.answers[m], sex:state.sex, age_band:state.age_band});
+    if (!d.done) { state.current = d; state.selected = null; state.busy = false; state.screen = "quiz"; render(); return; }
+    if (state.mi < MODULES.length - 1) { state.mi++; return advance(); }
+    state.screen = "analyzing"; render();
+    state.result = await api("/api/summary", {phq9:state.answers.phq9, gad7:state.answers.gad7, sex:state.sex, age_band:state.age_band});
+    state.screen = "result"; state.busy = false; render();
+  } catch (e) { state.busy = false; showError("Error: " + e.message); render(); }
+}
+
+async function next() {
+  if (state.selected === null || !state.current || state.busy) return;
+  const m = MODULES[state.mi];
+  state.answers[m][state.current.item] = state.selected;
+  state.history.push({mi:state.mi, item:state.current.item, q:state.current});
+  state.busy = true; render();
+  await advance();
+}
+
+function back() {
+  const h = state.history.pop();
+  if (!h) return;
+  state.mi = h.mi;
+  const prev = state.answers[MODULES[h.mi]][h.item];
+  delete state.answers[MODULES[h.mi]][h.item];
+  state.current = h.q; state.selected = prev; state.screen = "quiz"; render();
+}
+
+render();
+</script>
+</body>
+</html>

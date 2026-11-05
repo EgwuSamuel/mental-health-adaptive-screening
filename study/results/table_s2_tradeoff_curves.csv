@@ -1,0 +1,64 @@
+instrument,method,mean_items,sensitivity
+PHQ-9,"CAS (adaptive, CRC)",3.4828,0.7775
+PHQ-9,"CAS (adaptive, CRC)",3.562,0.8324
+PHQ-9,"CAS (adaptive, CRC)",3.7339,0.9061
+PHQ-9,"CAS (adaptive, CRC)",3.829,0.9422
+PHQ-9,"CAS (adaptive, CRC)",3.9445,0.9639
+PHQ-9,"CAS (adaptive, CRC)",4.1308,0.9783
+PHQ-9,"CAS (adaptive, CRC)",4.437,0.9841
+PHQ-9,"CAS (adaptive, CRC)",5.1241,0.9971
+PHQ-9,CAS - standard order (CRC),3.5866,0.8136
+PHQ-9,CAS - standard order (CRC),3.6569,0.8483
+PHQ-9,CAS - standard order (CRC),3.7798,0.8988
+PHQ-9,CAS - standard order (CRC),3.9305,0.9364
+PHQ-9,CAS - standard order (CRC),4.1593,0.9639
+PHQ-9,CAS - standard order (CRC),4.312,0.9798
+PHQ-9,CAS - standard order (CRC),5.1943,0.9942
+PHQ-9,CAS - standard order (CRC),5.1943,0.9942
+PHQ-9,Stochastic curtailment (std order),3.4058,0.6777
+PHQ-9,Stochastic curtailment (std order),3.462,0.7197
+PHQ-9,Stochastic curtailment (std order),3.6317,0.8353
+PHQ-9,Stochastic curtailment (std order),3.7656,0.8974
+PHQ-9,Stochastic curtailment (std order),4.0144,0.9436
+PHQ-9,Stochastic curtailment (std order),4.2268,0.9754
+PHQ-9,Stochastic curtailment (std order),4.3153,0.9798
+PHQ-9,Stochastic curtailment (std order),5.4922,0.9971
+PHQ-9,PHQ-2 two-stage + safety item,3.3208,0.4436
+PHQ-9,PHQ-2 two-stage + safety item,3.4454,0.5968
+PHQ-9,PHQ-2 two-stage + safety item,3.6785,0.7572
+PHQ-9,PHQ-2 two-stage + safety item,4.2679,0.9263
+PHQ-9,PHQ-2 two-stage + safety item,5.0995,0.9827
+PHQ-9,Items 2+4 two-stage + safety item,3.37,0.5145
+PHQ-9,Items 2+4 two-stage + safety item,3.5693,0.7384
+PHQ-9,Items 2+4 two-stage + safety item,3.967,0.9061
+PHQ-9,Items 2+4 two-stage + safety item,4.711,0.9913
+PHQ-9,Items 2+4 two-stage + safety item,6.3004,0.9986
+GAD-7,"CAS (adaptive, CRC)",2.1044,0.8912
+GAD-7,"CAS (adaptive, CRC)",2.1044,0.8912
+GAD-7,"CAS (adaptive, CRC)",2.1044,0.8912
+GAD-7,"CAS (adaptive, CRC)",2.1077,0.898
+GAD-7,"CAS (adaptive, CRC)",2.3415,0.9796
+GAD-7,"CAS (adaptive, CRC)",2.3435,0.9864
+GAD-7,"CAS (adaptive, CRC)",2.8027,0.9932
+GAD-7,"CAS (adaptive, CRC)",2.8897,1.0
+GAD-7,CAS - standard order (CRC),2.1072,0.8639
+GAD-7,CAS - standard order (CRC),2.3166,0.9728
+GAD-7,CAS - standard order (CRC),2.3175,0.9728
+GAD-7,CAS - standard order (CRC),2.4634,0.9864
+GAD-7,CAS - standard order (CRC),2.4634,0.9864
+GAD-7,CAS - standard order (CRC),2.4634,0.9864
+GAD-7,CAS - standard order (CRC),2.9501,1.0
+GAD-7,CAS - standard order (CRC),2.9786,1.0
+GAD-7,Stochastic curtailment (std order),2.0774,0.7619
+GAD-7,Stochastic curtailment (std order),2.08,0.7687
+GAD-7,Stochastic curtailment (std order),2.0892,0.8027
+GAD-7,Stochastic curtailment (std order),2.1107,0.8639
+GAD-7,Stochastic curtailment (std order),2.127,0.9048
+GAD-7,Stochastic curtailment (std order),2.3166,0.9728
+GAD-7,Stochastic curtailment (std order),2.3239,0.9728
+GAD-7,Stochastic curtailment (std order),2.4718,0.9864
+GAD-7,GAD-2 two-stage,2.0478,0.3741
+GAD-7,GAD-2 two-stage,2.0996,0.6939
+GAD-7,GAD-2 two-stage,2.1951,0.9048
+GAD-7,GAD-2 two-stage,3.0234,1.0
+GAD-7,GAD-2 two-stage,4.0015,1.0

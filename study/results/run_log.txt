@@ -1,0 +1,14 @@
+[16:34:59] == PHQ-9: development n=31191
+[16:34:59] probability model comparison
+[16:35:17] fitting CAS model
+[16:36:15] trajectories: calibration + test
+[16:37:21] validity experiment (repeated calibration splits)
+[16:39:14] external / shifted datasets
+[16:42:22] == GAD-7: development n=24292
+[16:42:22] probability model comparison
+[16:42:28] fitting CAS model
+[16:42:40] trajectories: calibration + test
+[16:42:53] validity experiment (repeated calibration splits)
+[16:43:13] external / shifted datasets
+[16:43:15] local recalibration curves
+[16:43:26] figures

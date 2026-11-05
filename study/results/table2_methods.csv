@@ -1,0 +1,121 @@
+dataset,instrument,method,n,n_pos,mean_items,items_saved_%,sensitivity,fnr,worst_group_fnr,note
+NHANES 2005-2016 internal test,PHQ-9,Full PHQ-9,7799,692,9.0,0.0,1.0,0.0,"{""sex_age"": 0.0, ""race"": 0.0}",reference
+NHANES 2005-2016 internal test,PHQ-9,PHQ-2 >=3 then PHQ-9 + safety item,7799,692,3.6785,59.1272,0.7572,0.2428,"{""sex_age"": 0.262, ""race"": 0.277}",two-stage; safety item asked (like-for-like)
+NHANES 2005-2016 internal test,PHQ-9,PHQ-2 >=3 then PHQ-9 (no safety item),7799,692,2.6759,70.2683,0.6936,0.3064,"{""sex_age"": 0.347, ""race"": 0.383}",two-stage as used in practice; self-harm item skipped
+NHANES 2005-2016 internal test,PHQ-9,PHQ-2 >=2 then PHQ-9 + safety item,7799,692,4.2679,52.5794,0.9263,0.0737,"{""sex_age"": 0.104, ""race"": 0.128}",two-stage; safety item asked (like-for-like)
+NHANES 2005-2016 internal test,PHQ-9,PHQ-2 >=2 then PHQ-9 (no safety item),7799,692,3.4235,61.9609,0.9075,0.0925,"{""sex_age"": 0.178, ""race"": 0.149}",two-stage as used in practice; self-harm item skipped
+NHANES 2005-2016 internal test,PHQ-9,Items 2+4 >=2 then PHQ-9 (PHQ-2W style) + safety item,7799,692,4.711,47.6557,0.9913,0.0087,"{""sex_age"": 0.024, ""race"": 0.021}",two-stage; safety item asked (like-for-like)
+NHANES 2005-2016 internal test,PHQ-9,Items 2+4 >=2 then PHQ-9 (PHQ-2W style) (no safety item),7799,692,3.9683,55.9075,0.9841,0.0159,"{""sex_age"": 0.042, ""race"": 0.025}",two-stage as used in practice; self-harm item skipped
+NHANES 2005-2016 internal test,PHQ-9,Exact curtailment (standard order),7799,692,7.8395,12.8948,1.0,0.0,"{""sex_age"": 0.0, ""race"": 0.0}",
+NHANES 2005-2016 internal test,PHQ-9,Exact curtailment (adaptive order),7799,692,6.85,23.8891,1.0,0.0,"{""sex_age"": 0.0, ""race"": 0.0}",
+NHANES 2005-2016 internal test,PHQ-9,"Stochastic curtailment (standard order, p<=0.05)",7799,692,3.7656,58.1599,0.8974,0.1026,"{""sex_age"": 0.164, ""race"": 0.17}",uncalibrated threshold
+NHANES 2005-2016 internal test,PHQ-9,CAS - standard order (CRC),7799,692,4.1593,53.7861,0.9639,0.0361,"{""sex_age"": 0.082, ""race"": 0.085}",
+NHANES 2005-2016 internal test,PHQ-9,"CAS (adaptive, CRC)",7799,692,3.9445,56.1724,0.9639,0.0361,"{""sex_age"": 0.055, ""race"": 0.093}",
+NHANES 2005-2016 internal test,PHQ-9,"CAS-G (adaptive, group-wise CRC)",7799,692,4.1446,53.9485,0.9754,0.0246,"{""sex_age"": 0.054, ""race"": 0.064}",
+NHANES 2005-2016 internal test,PHQ-9,"CAS-PAC (adaptive, P(FNR<=0.05)>=0.90)",7799,692,3.984,55.7336,0.9697,0.0303,"{""sex_age"": 0.048, ""race"": 0.07}",
+NHANES 2005-2016 internal test,PHQ-9,CAS without safety item (supplementary),7799,692,3.0326,66.3048,0.9624,0.0376,"{""sex_age"": 0.048, ""race"": 0.081}",compare with two-stage (no safety item)
+NHANES 2017-2020 (temporal),PHQ-9,Full PHQ-9,8276,767,9.0,0.0,1.0,0.0,"{""sex_age"": 0.0}",reference
+NHANES 2017-2020 (temporal),PHQ-9,PHQ-2 >=3 then PHQ-9 + safety item,8276,767,3.6931,58.9657,0.7366,0.2634,"{""sex_age"": 0.331}",two-stage; safety item asked (like-for-like)
+NHANES 2017-2020 (temporal),PHQ-9,PHQ-2 >=3 then PHQ-9 (no safety item),8276,767,2.6936,70.0714,0.6793,0.3207,"{""sex_age"": 0.411}",two-stage as used in practice; self-harm item skipped
+NHANES 2017-2020 (temporal),PHQ-9,PHQ-2 >=2 then PHQ-9 + safety item,8276,767,4.318,52.0219,0.927,0.073,"{""sex_age"": 0.115}",two-stage; safety item asked (like-for-like)
+NHANES 2017-2020 (temporal),PHQ-9,PHQ-2 >=2 then PHQ-9 (no safety item),8276,767,3.4954,61.1621,0.914,0.086,"{""sex_age"": 0.149}",two-stage as used in practice; self-harm item skipped
+NHANES 2017-2020 (temporal),PHQ-9,Items 2+4 >=2 then PHQ-9 (PHQ-2W style) + safety item,8276,767,4.7827,46.8584,0.987,0.013,"{""sex_age"": 0.02}",two-stage; safety item asked (like-for-like)
+NHANES 2017-2020 (temporal),PHQ-9,Items 2+4 >=2 then PHQ-9 (PHQ-2W style) (no safety item),8276,767,4.0545,54.9501,0.9804,0.0196,"{""sex_age"": 0.032}",two-stage as used in practice; self-harm item skipped
+NHANES 2017-2020 (temporal),PHQ-9,Exact curtailment (standard order),8276,767,7.8375,12.9169,1.0,0.0,"{""sex_age"": 0.0}",
+NHANES 2017-2020 (temporal),PHQ-9,Exact curtailment (adaptive order),8276,767,6.8575,23.8051,1.0,0.0,"{""sex_age"": 0.0}",
+NHANES 2017-2020 (temporal),PHQ-9,"Stochastic curtailment (standard order, p<=0.05)",8276,767,3.8169,57.5895,0.897,0.103,"{""sex_age"": 0.138}",uncalibrated threshold
+NHANES 2017-2020 (temporal),PHQ-9,CAS - standard order (CRC),8276,767,4.2081,53.2436,0.9635,0.0365,"{""sex_age"": 0.086}",
+NHANES 2017-2020 (temporal),PHQ-9,"CAS (adaptive, CRC)",8276,767,4.0035,55.5166,0.9622,0.0378,"{""sex_age"": 0.08}",
+NHANES 2017-2020 (temporal),PHQ-9,"CAS-G (adaptive, group-wise CRC)",8276,767,4.1368,54.0358,0.9648,0.0352,"{""sex_age"": 0.069}",
+NHANES 2017-2020 (temporal),PHQ-9,"CAS-PAC (adaptive, P(FNR<=0.05)>=0.90)",8276,767,4.0428,55.0803,0.9687,0.0313,"{""sex_age"": 0.071}",
+NHANES 2017-2020 (temporal),PHQ-9,CAS without safety item (supplementary),8276,767,3.0973,65.5859,0.9596,0.0404,"{""sex_age"": 0.08}",compare with two-stage (no safety item)
+"NHANES 2021-2023 (temporal, post-COVID)",PHQ-9,Full PHQ-9,5455,723,9.0,0.0,1.0,0.0,"{""sex_age"": 0.0}",reference
+"NHANES 2021-2023 (temporal, post-COVID)",PHQ-9,PHQ-2 >=3 then PHQ-9 + safety item,5455,723,3.8491,57.2319,0.7289,0.2711,"{""sex_age"": 0.34}",two-stage; safety item asked (like-for-like)
+"NHANES 2021-2023 (temporal, post-COVID)",PHQ-9,PHQ-2 >=3 then PHQ-9 (no safety item),5455,723,2.8546,68.2819,0.6639,0.3361,"{""sex_age"": 0.45}",two-stage as used in practice; self-harm item skipped
+"NHANES 2021-2023 (temporal, post-COVID)",PHQ-9,PHQ-2 >=2 then PHQ-9 + safety item,5455,723,4.6785,48.0171,0.9378,0.0622,"{""sex_age"": 0.089}",two-stage; safety item asked (like-for-like)
+"NHANES 2021-2023 (temporal, post-COVID)",PHQ-9,PHQ-2 >=2 then PHQ-9 (no safety item),5455,723,3.9223,56.4192,0.9295,0.0705,"{""sex_age"": 0.105}",two-stage as used in practice; self-harm item skipped
+"NHANES 2021-2023 (temporal, post-COVID)",PHQ-9,Items 2+4 >=2 then PHQ-9 (PHQ-2W style) + safety item,5455,723,5.1118,43.202,0.9903,0.0097,"{""sex_age"": 0.025}",two-stage; safety item asked (like-for-like)
+"NHANES 2021-2023 (temporal, post-COVID)",PHQ-9,Items 2+4 >=2 then PHQ-9 (PHQ-2W style) (no safety item),5455,723,4.4368,50.7017,0.9862,0.0138,"{""sex_age"": 0.026}",two-stage as used in practice; self-harm item skipped
+"NHANES 2021-2023 (temporal, post-COVID)",PHQ-9,Exact curtailment (standard order),5455,723,7.9569,11.5898,1.0,0.0,"{""sex_age"": 0.0}",
+"NHANES 2021-2023 (temporal, post-COVID)",PHQ-9,Exact curtailment (adaptive order),5455,723,7.0209,21.99,1.0,0.0,"{""sex_age"": 0.0}",
+"NHANES 2021-2023 (temporal, post-COVID)",PHQ-9,"Stochastic curtailment (standard order, p<=0.05)",5455,723,4.0654,54.8284,0.9087,0.0913,"{""sex_age"": 0.136}",uncalibrated threshold
+"NHANES 2021-2023 (temporal, post-COVID)",PHQ-9,CAS - standard order (CRC),5455,723,4.5201,49.777,0.9737,0.0263,"{""sex_age"": 0.038}",
+"NHANES 2021-2023 (temporal, post-COVID)",PHQ-9,"CAS (adaptive, CRC)",5455,723,4.2671,52.5878,0.9682,0.0318,"{""sex_age"": 0.072}",
+"NHANES 2021-2023 (temporal, post-COVID)",PHQ-9,"CAS-G (adaptive, group-wise CRC)",5455,723,4.4264,50.8178,0.9737,0.0263,"{""sex_age"": 0.087}",
+"NHANES 2021-2023 (temporal, post-COVID)",PHQ-9,"CAS-PAC (adaptive, P(FNR<=0.05)>=0.90)",5455,723,4.2995,52.2273,0.9723,0.0277,"{""sex_age"": 0.058}",
+"NHANES 2021-2023 (temporal, post-COVID)",PHQ-9,CAS without safety item (supplementary),5455,723,3.347,62.8109,0.9682,0.0318,"{""sex_age"": 0.058}",compare with two-stage (no safety item)
+China students (external),PHQ-9,Full PHQ-9,24292,1316,9.0,0.0,1.0,0.0,"{""sex_age"": 0.0}",reference
+China students (external),PHQ-9,PHQ-2 >=3 then PHQ-9 + safety item,24292,1316,3.6649,59.2788,0.8419,0.1581,"{""sex_age"": 0.165}",two-stage; safety item asked (like-for-like)
+China students (external),PHQ-9,PHQ-2 >=3 then PHQ-9 (no safety item),24292,1316,2.389,73.4554,0.6383,0.3617,"{""sex_age"": 0.383}",two-stage as used in practice; self-harm item skipped
+China students (external),PHQ-9,PHQ-2 >=2 then PHQ-9 + safety item,24292,1316,5.2118,42.0907,0.9856,0.0144,"{""sex_age"": 0.026}",two-stage; safety item asked (like-for-like)
+China students (external),PHQ-9,PHQ-2 >=2 then PHQ-9 (no safety item),24292,1316,4.4963,50.0407,0.9726,0.0274,"{""sex_age"": 0.04}",two-stage as used in practice; self-harm item skipped
+China students (external),PHQ-9,Items 2+4 >=2 then PHQ-9 (PHQ-2W style) + safety item,24292,1316,5.0735,43.6275,0.9924,0.0076,"{""sex_age"": 0.012}",two-stage; safety item asked (like-for-like)
+China students (external),PHQ-9,Items 2+4 >=2 then PHQ-9 (PHQ-2W style) (no safety item),24292,1316,4.3353,51.8305,0.9818,0.0182,"{""sex_age"": 0.022}",two-stage as used in practice; self-harm item skipped
+China students (external),PHQ-9,Exact curtailment (standard order),24292,1316,7.9986,11.1262,1.0,0.0,"{""sex_age"": 0.0}",
+China students (external),PHQ-9,Exact curtailment (adaptive order),24292,1316,7.0257,21.9363,1.0,0.0,"{""sex_age"": 0.0}",
+China students (external),PHQ-9,"Stochastic curtailment (standard order, p<=0.05)",24292,1316,4.1944,53.3953,0.9552,0.0448,"{""sex_age"": 0.06}",uncalibrated threshold
+China students (external),PHQ-9,CAS - standard order (CRC),24292,1316,4.8124,46.5288,0.9863,0.0137,"{""sex_age"": 0.02}",
+China students (external),PHQ-9,"CAS (adaptive, CRC)",24292,1316,4.2362,52.9315,0.9742,0.0258,"{""sex_age"": 0.036}",
+China students (external),PHQ-9,"CAS-G (adaptive, group-wise CRC)",24292,1316,4.3921,51.1993,0.984,0.016,"{""sex_age"": 0.019}",
+China students (external),PHQ-9,"CAS-PAC (adaptive, P(FNR<=0.05)>=0.90)",24292,1316,4.2598,52.6694,0.9764,0.0236,"{""sex_age"": 0.034}",
+China students (external),PHQ-9,CAS without safety item (supplementary),24292,1316,3.3728,62.5249,0.9673,0.0327,"{""sex_age"": 0.038}",compare with two-stage (no safety item)
+Mexico medical students (external),PHQ-9,Full PHQ-9,771,192,9.0,0.0,1.0,0.0,"{""sex_age"": 0.0}",reference
+Mexico medical students (external),PHQ-9,PHQ-2 >=3 then PHQ-9 + safety item,771,192,4.3463,51.7077,0.6302,0.3698,"{""sex_age"": 0.414}",two-stage; safety item asked (like-for-like)
+Mexico medical students (external),PHQ-9,PHQ-2 >=3 then PHQ-9 (no safety item),771,192,3.3074,63.2512,0.5573,0.4427,"{""sex_age"": 0.483}",two-stage as used in practice; self-harm item skipped
+Mexico medical students (external),PHQ-9,PHQ-2 >=2 then PHQ-9 + safety item,771,192,6.4163,28.7073,0.9323,0.0677,"{""sex_age"": 0.092}",two-stage; safety item asked (like-for-like)
+Mexico medical students (external),PHQ-9,PHQ-2 >=2 then PHQ-9 (no safety item),771,192,5.904,34.3998,0.9062,0.0938,"{""sex_age"": 0.132}",two-stage as used in practice; self-harm item skipped
+Mexico medical students (external),PHQ-9,Items 2+4 >=2 then PHQ-9 (PHQ-2W style) + safety item,771,192,6.9689,22.5681,0.9948,0.0052,"{""sex_age"": 0.013}",two-stage; safety item asked (like-for-like)
+Mexico medical students (external),PHQ-9,Items 2+4 >=2 then PHQ-9 (PHQ-2W style) (no safety item),771,192,6.5577,27.1365,0.974,0.026,"{""sex_age"": 0.039}",two-stage as used in practice; self-harm item skipped
+Mexico medical students (external),PHQ-9,Exact curtailment (standard order),771,192,8.4553,6.0527,1.0,0.0,"{""sex_age"": 0.0}",
+Mexico medical students (external),PHQ-9,Exact curtailment (adaptive order),771,192,7.7601,13.7772,1.0,0.0,"{""sex_age"": 0.0}",
+Mexico medical students (external),PHQ-9,"Stochastic curtailment (standard order, p<=0.05)",771,192,5.1907,42.326,0.9115,0.0885,"{""sex_age"": 0.105}",uncalibrated threshold
+Mexico medical students (external),PHQ-9,CAS - standard order (CRC),771,192,6.2607,30.4367,0.9792,0.0208,"{""sex_age"": 0.039}",
+Mexico medical students (external),PHQ-9,"CAS (adaptive, CRC)",771,192,5.5992,37.7864,0.9635,0.0365,"{""sex_age"": 0.066}",
+Mexico medical students (external),PHQ-9,"CAS-G (adaptive, group-wise CRC)",771,192,6.0661,32.5984,0.9792,0.0208,"{""sex_age"": 0.026}",
+Mexico medical students (external),PHQ-9,"CAS-PAC (adaptive, P(FNR<=0.05)>=0.90)",771,192,5.6654,37.0514,0.9688,0.0312,"{""sex_age"": 0.053}",
+Mexico medical students (external),PHQ-9,CAS without safety item (supplementary),771,192,4.834,46.2891,0.9479,0.0521,"{""sex_age"": 0.079}",compare with two-stage (no safety item)
+Online hobbyist survey (external),PHQ-9,Full PHQ-9,254,19,9.0,0.0,1.0,0.0,{},reference
+Online hobbyist survey (external),PHQ-9,PHQ-2 >=3 then PHQ-9 + safety item,254,19,3.2362,64.042,0.4211,0.5789,{},two-stage; safety item asked (like-for-like)
+Online hobbyist survey (external),PHQ-9,PHQ-2 >=3 then PHQ-9 (no safety item),254,19,2.248,75.0219,0.4211,0.5789,{},two-stage as used in practice; self-harm item skipped
+Online hobbyist survey (external),PHQ-9,PHQ-2 >=2 then PHQ-9 + safety item,254,19,3.8031,57.7428,0.8421,0.1579,{},two-stage; safety item asked (like-for-like)
+Online hobbyist survey (external),PHQ-9,PHQ-2 >=2 then PHQ-9 (no safety item),254,19,2.9094,67.6728,0.8421,0.1579,{},two-stage as used in practice; self-harm item skipped
+Online hobbyist survey (external),PHQ-9,Items 2+4 >=2 then PHQ-9 (PHQ-2W style) + safety item,254,19,3.8504,57.2178,1.0,0.0,{},two-stage; safety item asked (like-for-like)
+Online hobbyist survey (external),PHQ-9,Items 2+4 >=2 then PHQ-9 (PHQ-2W style) (no safety item),254,19,2.9646,67.0604,1.0,0.0,{},two-stage as used in practice; self-harm item skipped
+Online hobbyist survey (external),PHQ-9,Exact curtailment (standard order),254,19,7.5315,16.3167,1.0,0.0,{},
+Online hobbyist survey (external),PHQ-9,Exact curtailment (adaptive order),254,19,6.5787,26.9029,1.0,0.0,{},
+Online hobbyist survey (external),PHQ-9,"Stochastic curtailment (standard order, p<=0.05)",254,19,3.5039,61.0674,0.8421,0.1579,{},uncalibrated threshold
+Online hobbyist survey (external),PHQ-9,CAS - standard order (CRC),254,19,3.6654,59.2738,0.8947,0.1053,{},
+Online hobbyist survey (external),PHQ-9,"CAS (adaptive, CRC)",254,19,3.5827,60.1925,0.9474,0.0526,{},
+Online hobbyist survey (external),PHQ-9,"CAS-G (adaptive, group-wise CRC)",254,19,6.5787,26.9029,1.0,0.0,{},
+Online hobbyist survey (external),PHQ-9,"CAS-PAC (adaptive, P(FNR<=0.05)>=0.90)",254,19,3.6457,59.4926,0.9474,0.0526,{},
+Online hobbyist survey (external),PHQ-9,CAS without safety item (supplementary),254,19,2.685,70.1662,0.9474,0.0526,{},compare with two-stage (no safety item)
+China students internal test,GAD-7,Full GAD-7,6073,147,7.0,0.0,1.0,0.0,"{""sex"": 0.0}",reference
+China students internal test,GAD-7,GAD-2 >=3 then GAD-7,6073,147,2.1951,68.6411,0.9048,0.0952,"{""sex"": 0.133}",two-stage
+China students internal test,GAD-7,GAD-2 >=2 then GAD-7,6073,147,3.0234,56.8088,1.0,0.0,"{""sex"": 0.0}",two-stage
+China students internal test,GAD-7,Exact curtailment (standard order),6073,147,4.6287,33.8759,1.0,0.0,"{""sex"": 0.0}",
+China students internal test,GAD-7,Exact curtailment (adaptive order),6073,147,4.5126,35.5343,1.0,0.0,"{""sex"": 0.0}",
+China students internal test,GAD-7,"Stochastic curtailment (standard order, p<=0.05)",6073,147,2.1107,69.8478,0.8639,0.1361,"{""sex"": 0.167}",uncalibrated threshold
+China students internal test,GAD-7,CAS - standard order (CRC),6073,147,2.4634,64.8091,0.9864,0.0136,"{""sex"": 0.017}",
+China students internal test,GAD-7,"CAS (adaptive, CRC)",6073,147,2.3415,66.5498,0.9796,0.0204,"{""sex"": 0.023}",
+China students internal test,GAD-7,"CAS-G (adaptive, group-wise CRC)",6073,147,2.3422,66.5404,0.9796,0.0204,"{""sex"": 0.023}",
+China students internal test,GAD-7,"CAS-PAC (adaptive, P(FNR<=0.05)>=0.90)",6073,147,2.3435,66.5216,0.9864,0.0136,"{""sex"": 0.017}",
+Mexico medical students (external),GAD-7,Full GAD-7,769,188,7.0,0.0,1.0,0.0,"{""sex"": 0.0}",reference
+Mexico medical students (external),GAD-7,GAD-2 >=3 then GAD-7,769,188,3.7165,46.9069,0.9255,0.0745,"{""sex"": 0.136}",two-stage
+Mexico medical students (external),GAD-7,GAD-2 >=2 then GAD-7,769,188,5.2315,25.2647,1.0,0.0,"{""sex"": 0.0}",two-stage
+Mexico medical students (external),GAD-7,Exact curtailment (standard order),769,188,5.5306,20.992,1.0,0.0,"{""sex"": 0.0}",
+Mexico medical students (external),GAD-7,Exact curtailment (adaptive order),769,188,5.4148,22.6454,1.0,0.0,"{""sex"": 0.0}",
+Mexico medical students (external),GAD-7,"Stochastic curtailment (standard order, p<=0.05)",769,188,3.052,56.3998,0.8936,0.1064,"{""sex"": 0.197}",uncalibrated threshold
+Mexico medical students (external),GAD-7,CAS - standard order (CRC),769,188,3.9103,44.139,0.9787,0.0213,"{""sex"": 0.03}",
+Mexico medical students (external),GAD-7,"CAS (adaptive, CRC)",769,188,3.6463,47.9101,0.9574,0.0426,"{""sex"": 0.061}",
+Mexico medical students (external),GAD-7,"CAS-G (adaptive, group-wise CRC)",769,188,3.6567,47.7615,0.9574,0.0426,"{""sex"": 0.061}",
+Mexico medical students (external),GAD-7,"CAS-PAC (adaptive, P(FNR<=0.05)>=0.90)",769,188,3.6775,47.4642,0.9734,0.0266,"{""sex"": 0.03}",
+Online hobbyist survey (external),GAD-7,Full GAD-7,241,11,7.0,0.0,1.0,0.0,{},reference
+Online hobbyist survey (external),GAD-7,GAD-2 >=3 then GAD-7,241,11,2.2282,68.1683,1.0,0.0,{},two-stage
+Online hobbyist survey (external),GAD-7,GAD-2 >=2 then GAD-7,241,11,3.0996,55.7202,1.0,0.0,{},two-stage
+Online hobbyist survey (external),GAD-7,Exact curtailment (standard order),241,11,4.5934,34.3806,1.0,0.0,{},
+Online hobbyist survey (external),GAD-7,Exact curtailment (adaptive order),241,11,4.4813,35.981,1.0,0.0,{},
+Online hobbyist survey (external),GAD-7,"Stochastic curtailment (standard order, p<=0.05)",241,11,2.0954,70.0652,1.0,0.0,{},uncalibrated threshold
+Online hobbyist survey (external),GAD-7,CAS - standard order (CRC),241,11,2.4398,65.1452,1.0,0.0,{},
+Online hobbyist survey (external),GAD-7,"CAS (adaptive, CRC)",241,11,2.3651,66.2122,1.0,0.0,{},
+Online hobbyist survey (external),GAD-7,"CAS-G (adaptive, group-wise CRC)",241,11,2.3651,66.2122,1.0,0.0,{},
+Online hobbyist survey (external),GAD-7,"CAS-PAC (adaptive, P(FNR<=0.05)>=0.90)",241,11,2.3651,66.2122,1.0,0.0,{},

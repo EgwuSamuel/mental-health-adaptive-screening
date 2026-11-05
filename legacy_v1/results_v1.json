@@ -1,0 +1,106 @@
+{
+  "n_total": 3000,
+  "n_train": 2400,
+  "n_test": 600,
+  "n_features": 20,
+  "class_counts": {
+    "low": 979,
+    "moderate": 1746,
+    "high": 275
+  },
+  "cv": {
+    "Random Forest": {
+      "mean": 0.9371,
+      "std": 0.014
+    },
+    "SVM (RBF)": {
+      "mean": 0.9392,
+      "std": 0.0149
+    },
+    "Gradient Boosting": {
+      "mean": 0.9779,
+      "std": 0.0061
+    },
+    "Logistic Regression": {
+      "mean": 0.9104,
+      "std": 0.0062
+    }
+  },
+  "selected_model": "Gradient Boosting",
+  "test": {
+    "accuracy": 0.9817,
+    "auc_macro_ovr": 0.9986,
+    "confusion_matrix": [
+      [
+        194,
+        2,
+        0
+      ],
+      [
+        4,
+        345,
+        0
+      ],
+      [
+        0,
+        5,
+        50
+      ]
+    ],
+    "per_class": {
+      "low": {
+        "precision": 0.98,
+        "recall": 0.99,
+        "f1-score": 0.985
+      },
+      "moderate": {
+        "precision": 0.98,
+        "recall": 0.989,
+        "f1-score": 0.984
+      },
+      "high": {
+        "precision": 1.0,
+        "recall": 0.909,
+        "f1-score": 0.952
+      }
+    },
+    "macro_f1": 0.974
+  },
+  "baselines_on_test": {
+    "generating_rule_accuracy": 1.0,
+    "phq_cutoff_only_accuracy": 0.8867
+  },
+  "share_labels_not_explained_by_phq_cutoffs": 0.0973,
+  "importance_deployed_model": {
+    "impurity": {
+      "phq9_total": 0.803,
+      "gad2_total": 0.068,
+      "func_impact": 0.065,
+      "duration_phq_interaction": 0.05,
+      "anxiety_cluster": 0.003,
+      "q1": 0.002,
+      "q2": 0.001,
+      "q8": 0.001
+    },
+    "permutation_test_set": {
+      "phq9_total": 0.472,
+      "gad2_total": 0.075,
+      "func_impact": 0.072,
+      "duration_phq_interaction": 0.064,
+      "q8": 0.002,
+      "somatic_cluster": 0.002,
+      "anxiety_cluster": 0.002,
+      "q11": 0.001
+    }
+  },
+  "importance_random_forest_(what_draft_Table7_showed)": {
+    "phq9_total": 0.531,
+    "somatic_cluster": 0.084,
+    "cognitive_cluster": 0.055,
+    "core_depression": 0.055,
+    "duration_phq_interaction": 0.055,
+    "q6": 0.039,
+    "anxiety_cluster": 0.02,
+    "q7": 0.017
+  }
+}

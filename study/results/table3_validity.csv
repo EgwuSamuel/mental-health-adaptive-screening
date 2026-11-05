@@ -1,0 +1,35 @@
+lambda,group,mean_fnr,p90_fnr,share_reps_fnr_gt_alpha,instrument
+marginal,overall,0.0482,0.0664,0.468,PHQ-9
+marginal,sex_age=female|18-39,0.0383,0.0608,0.278,PHQ-9
+marginal,sex_age=female|40-59,0.0472,0.0675,0.39,PHQ-9
+marginal,sex_age=female|60+,0.053,0.0794,0.518,PHQ-9
+marginal,sex_age=male|18-39,0.0627,0.0879,0.714,PHQ-9
+marginal,sex_age=male|40-59,0.0378,0.0639,0.236,PHQ-9
+marginal,sex_age=male|60+,0.0597,0.0897,0.632,PHQ-9
+marginal,race=Mexican American,0.0724,0.0991,0.864,PHQ-9
+marginal,race=Non-Hispanic Black,0.0529,0.0748,0.546,PHQ-9
+marginal,race=Non-Hispanic White,0.0293,0.0439,0.062,PHQ-9
+marginal,race=Other Hispanic,0.0759,0.114,0.78,PHQ-9
+marginal,race=Other/multiracial,0.0462,0.0741,0.4,PHQ-9
+group,overall,0.0334,0.046,0.034,PHQ-9
+group,sex_age=female|18-39,0.0233,0.0398,0.032,PHQ-9
+group,sex_age=female|40-59,0.0362,0.0542,0.18,PHQ-9
+group,sex_age=female|60+,0.0369,0.0631,0.212,PHQ-9
+group,sex_age=male|18-39,0.0417,0.0861,0.384,PHQ-9
+group,sex_age=male|40-59,0.0349,0.0658,0.254,PHQ-9
+group,sex_age=male|60+,0.0311,0.0564,0.154,PHQ-9
+group,race=Mexican American,0.0413,0.0756,0.322,PHQ-9
+group,race=Non-Hispanic Black,0.0422,0.0675,0.308,PHQ-9
+group,race=Non-Hispanic White,0.0265,0.0395,0.024,PHQ-9
+group,race=Other Hispanic,0.0369,0.0698,0.278,PHQ-9
+group,race=Other/multiracial,0.0241,0.0625,0.158,PHQ-9
+marginal,mean_items,3.8865,,,PHQ-9
+group,mean_items,4.0679,,,PHQ-9
+marginal,overall,0.0447,0.0752,0.386,GAD-7
+marginal,sex=female,0.0504,0.0865,0.448,GAD-7
+marginal,sex=male,0.0356,0.0702,0.276,GAD-7
+group,overall,0.0414,0.0741,0.312,GAD-7
+group,sex=female,0.045,0.0833,0.366,GAD-7
+group,sex=male,0.0358,0.0909,0.282,GAD-7
+marginal,mean_items,2.2728,,,GAD-7
+group,mean_items,2.2921,,,GAD-7

@@ -1,0 +1,7 @@
+instrument,model,auc,brier,n_partial_states
+PHQ-9,Histogram gradient boosting (used),0.927,0.0451,17754
+PHQ-9,Logistic regression,0.9247,0.0454,17754
+PHQ-9,XGBoost,0.9248,0.0459,17754
+GAD-7,Histogram gradient boosting (used),0.9485,0.0146,11866
+GAD-7,Logistic regression,0.9474,0.0149,11866
+GAD-7,XGBoost,0.9471,0.0154,11866
